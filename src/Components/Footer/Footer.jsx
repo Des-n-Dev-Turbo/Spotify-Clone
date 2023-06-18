@@ -27,8 +27,8 @@ const Footer = () => {
       <div className="footer__left">
         <img src={discoverWeekly?.images[0].url} alt={discoverWeekly?.name} className="footer__album-logo" />
         <div className="footer__song-info">
-          <h4>{firstTrack.name}</h4>
-          <p>{firstTrack.artists.map((artist) => artist.name).join(', ')}</p>
+          <h4>{firstTrack?.name}</h4>
+          <p>{firstTrack?.artists.map((artist) => artist?.name).join(', ')}</p>
         </div>
       </div>
       <div className="footer__center">
