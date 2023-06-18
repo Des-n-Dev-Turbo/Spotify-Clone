@@ -12,18 +12,23 @@ import {
   VolumeMute,
 } from '@mui/icons-material';
 
+import { useDataLayerValue } from '../../store/DataLayer';
+
 import './Footer.css';
 
 const Footer = () => {
   const [volume, setVolume] = useState(75);
+  const [{ discoverWeekly }] = useDataLayerValue();
+
+  const firstTrack = discoverWeekly?.tracks.items[0].track;
 
   return (
     <div className="footer">
       <div className="footer__left">
-        <img src="" alt="" className="footer__album-logo" />
+        <img src={discoverWeekly?.images[0].url} alt={discoverWeekly?.name} className="footer__album-logo" />
         <div className="footer__song-info">
-          <h4>Name</h4>
-          <p>Artist</p>
+          <h4>{firstTrack.name}</h4>
+          <p>{firstTrack.artists.map((artist) => artist.name).join(', ')}</p>
         </div>
       </div>
       <div className="footer__center">
