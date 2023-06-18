@@ -1,6 +1,6 @@
 export const authEndpoint = 'https://accounts.spotify.com/authorize';
 
-const redirectURI = 'http://localhost:5173/';
+const redirectURI = 'https://spotify-clone-turbo.web.app/' || 'http://localhost:5173/';
 
 const clientId = '933b586e664f422ab529e334d4770794';
 
